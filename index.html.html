@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E34 Trailer & Truck Spare Parts - Ağır Vasıta Yedek Parça</title>
+    <style>
+        /* Global Styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #11141a;
+            color: #e6e8ea;
+            line-height: 1.6;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: #1a1e26;
+            border-bottom: 3px solid #ff5500;
+            padding: 10px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+        .header-container {
+            display: table;
+            width: 100%;
+        }
+        .logo-area {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .logo-flex {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-img {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+        }
+        .nav-area {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: right;
+        }
+        .nav-menu {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .nav-menu li {
+            display: inline-block;
+            margin-left: 25px;
+        }
+        .nav-menu a {
+            color: #e6e8ea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .nav-menu a:hover {
+            color: #ff5500;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1e26 0%, #0d1015 100%);
+            padding: 80px 5%;
+            text-align: center;
+            border-bottom: 1px solid #252b36;
+            position: relative;
+        }
+        .hero-badge {
+            background-color: rgba(212, 215, 224, 0.1);
+            color: #d4d7e0;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 85, 0, 0.3);
+        }
+        .hero h1 {
+            font-size: 42px;
+            color: #ffffff;
+            margin: 0 0 20px 0;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 18px;
+            color: #a0a5b0;
+            max-width: 700px;
+            margin: 0 auto 35px auto;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background-color: #ff5500;
+            color: #ffffff;
+            padding: 14px 35px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            display: inline-block;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 85, 0, 0.3);
+        }
+        .btn-primary:hover {
+            background-color: #e04b00;
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: #ffffff;
+            padding: 14px 35px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        .btn-whatsapp:hover {
+            background-color: #1ebd54;
+        }
+
+        /* Sections General */
+        .section {
+            padding: 80px 5%;
+        }
+        .section-bg {
+            background-color: #161a22;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title h2 {
+            font-size: 32px;
+            color: #ffffff;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #ff5500;
+            margin: 15px auto 0 auto;
+            border-radius: 2px;
+        }
+        .section-title p {
+            color: #a0a5b0;
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Brand Logos Grid */
+        .brands-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            width: 100%;
+        }
+        .brand-card {
+            background-color: #1a1e26;
+            border: 1px solid #252b36;
+            border-radius: 8px;
+            padding: 25px 20px;
+            width: calc(16.66% - 21px);
+            min-width: 165px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .brand-card:hover {
+            border-color: #ff5500;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 85, 0, 0.1);
+        }
+        .brand-logo-img {
+            width: 100%;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            background-color: #ffffff;
+            border-radius: 6px;
+            padding: 8px;
+        }
+        .brand-logo-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .brand-card h3 {
+            font-size: 14px;
+            color: #ff5500;
+            margin: 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Info Section Layout */
+        .info-table {
+            display: table;
+            width: 100%;
+        }
+        .info-cell {
+            display: table-cell;
+            width: 50%;
+            vertical-align: middle;
+            padding: 20px;
+        }
+        .info-panel {
+            background-color: #1a1e26;
+            border-left: 4px solid #ff5500;
+            padding: 30px;
+            border-radius: 0 6px 6px 0;
+        }
+        .info-panel h4 {
+            margin: 0 0 15px 0;
+            font-size: 22px;
+            color: #ffffff;
+        }
+        .info-list {
+            margin: 0;
+            padding: 0 0 0 20px;
+            color: #a0a5b0;
+        }
+        .info-list li {
+            margin-bottom: 12px;
+        }
+        .info-list strong {
+            color: #ffffff;
+        }
+
+        /* Contact Section */
+        .contact-table {
+            display: table;
+            width: 100%;
+        }
+        .contact-info-cell {
+            display: table-cell;
+            width: 45%;
+            vertical-align: top;
+            padding-right: 30px;
+        }
+        .contact-form-cell {
+            display: table-cell;
+            width: 55%;
+            vertical-align: top;
+            background-color: #161a22;
+            padding: 35px;
+            border-radius: 6px;
+            border: 1px solid #252b36;
+        }
+        .contact-item {
+            background-color: #161a22;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border-left: 3px solid #ff5500;
+        }
+        .contact-item h5 {
+            margin: 0 0 8px 0;
+            font-size: 13px;
+            text-transform: uppercase;
+            color: #ff5500;
+            letter-spacing: 1px;
+        }
+        .contact-item p {
+            margin: 0;
+            font-size: 16px;
+            color: #ffffff;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+        .contact-item a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact-item a:hover {
+            color: #ff5500;
+        }
+        .contact-item span {
+            font-size: 13px;
+            color: #a0a5b0;
+            display: block;
+            margin-top: 5px;
+        }
+        .phone-link {
+            font-weight: 600 !important;
+            color: #ff5500 !important;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #d4d7e0;
+        }
+        .form-control {
+            width: 100%;
+            background-color: #11141a;
+            border: 1px solid #252b36;
+            padding: 12px 15px;
+            color: #ffffff;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        .form-control:focus {
+            border-color: #ff5500;
+            outline: none;
+        }
+        .btn-submit {
+            background-color: #ff5500;
+            color: #ffffff;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: background-color 0.3s;
+        }
+        .btn-submit:hover {
+            background-color: #e04b00;
+        }
+
+        /* Truck & Trailer Visual Section */
+        .truck-showcase-section {
+            background: linear-gradient(to bottom, #11141a 0%, #090b0e 100%);
+            padding: 60px 5% 20px 5%;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            border-top: 1px solid #1a1e26;
+        }
+        .truck-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .truck-silhouette {
+            width: 100%;
+            height: auto;
+            opacity: 0.15;
+            fill: #ffffff;
+        }
+        .overlay-brand {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            text-align: center;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .overlay-logo-img {
+            max-width: 320px;
+            height: auto;
+            filter: drop-shadow(0 0 15px rgba(255, 85, 0, 0.3));
+        }
+
+        /* Sticky WhatsApp Button */
+        .sticky-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4), 0 0 0 0px rgba(37,211,102,0.5);
+            z-index: 9999;
+            transition: all 0.3s ease;
+            animation: pulse-wa 2s infinite;
+        }
+        .sticky-whatsapp:hover {
+            transform: scale(1.1);
+            background-color: #1ebd54;
+        }
+        .sticky-whatsapp svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+        @keyframes pulse-wa {
+            0% { box-shadow: 0 4px 20px rgba(0,0,0,0.4), 0 0 0 0px rgba(37,211,102,0.7); }
+            70% { box-shadow: 0 4px 20px rgba(0,0,0,0.4), 0 0 0 15px rgba(37,211,102,0); }
+            100% { box-shadow: 0 4px 20px rgba(0,0,0,0.4), 0 0 0 0px rgba(37,211,102,0); }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #050608;
+            padding: 30px 5%;
+            text-align: center;
+            border-top: 1px solid #11141a;
+            color: #505560;
+            font-size: 13px;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky WhatsApp Button -->
+    <a href="https://wa.me/905327373415?text=Merhaba,%20yedek%20parça%20hakkında%20bilgi%20almak%20istiyorum." class="sticky-whatsapp" target="_blank" title="WhatsApp ile İletişime Geçin">
+        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.456L0 24zm6.59-4.846c1.66.986 3.288 1.481 4.757 1.483 5.423-.001 9.834-4.417 9.837-9.843.002-2.63-1.023-5.101-2.883-6.963C16.438 1.968 13.97 .943 11.34 1.943 5.918 1.943 1.508 6.359 1.505 11.787c-.001 1.574.425 3.119 1.233 4.525L1.724 21.03l4.923-1.876zM17.476 14.39c-.329-.165-1.948-.96-2.248-1.069-.3-.11-.518-.165-.736.165-.219.33-.847 1.069-1.039 1.288-.192.219-.384.247-.713.083-1.156-.579-2.013-1.016-2.815-2.393-.21-.362.21-.336.604-1.13.064-.132.033-.247-.016-.347-.05-.1-.412-1.002-.566-1.369-.15-.36-.316-.31-.433-.316-.112-.005-.241-.006-.37-.006-.13 0-.34.048-.518.247-.18.197-.684.669-.684 1.63 0 .961.7 1.887.798 2.018.099.13 1.381 2.108 3.343 2.957.467.203.83.324 1.114.414.47.149.897.128 1.235.077.377-.057 1.948-.795 2.222-1.564.274-.768.274-1.427.192-1.563-.081-.137-.296-.219-.625-.384z"/></svg>
+    </a>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <div class="logo-flex">
+                    <!-- Kurumsal Logo Entegrasyonu -->
+                    <img src="c52ac79b-1cbc-4818-99c1-2730d061ec3a.jpg" alt="E34 Trailer & Truck Spare Parts" class="logo-img">
+                </div>
+            </div>
+            <div class="nav-area">
+                <ul class="nav-menu">
+                    <li><a href="#anasayfa">Anasayfa</a></li>
+                    <li><a href="#markalar">Markalarımız</a></li>
+                    <li><a href="#hakkimizda">Kurumsal</a></li>
+                    <li><a href="#iletisim">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="anasayfa" class="hero">
+        <div class="hero-badge">Güvenilir Ağır Vasıta Çözümleri</div>
+        <h1>Tır ve Treyleriniz İçin<br>Yüksek Kaliteli Yedek Parçalar</h1>
+        <p>E34 Trailer & Truck Spare Parts olarak, ağır vasıta lojistik sektörünün dinamiklerine uygun, uluslararası standartlarda dayanıklı, emniyetli oginal kalitede treyler ve kamyon yedek parçaları sunuyoruz.</p>
+        <div class="btn-group">
+            <a href="#iletisim" class="btn-primary">Teklif Al / İletişime Geç</a>
+            <a href="https://wa.me/905327373415?text=Merhaba,%20web%20sitenizden%20ulaşıyorum.%20Yedek%20parça%20fiyat%20teklifi%20alabilir%20miyim?" target="_blank" class="btn-whatsapp">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.456L0 24zm6.59-4.846c1.66.986 3.288 1.481 4.757 1.483 5.423-.001 9.834-4.417 9.837-9.843.002-2.63-1.023-5.101-2.883-6.963C16.438 1.968 13.97 .943 11.34 1.943 5.918 1.943 1.508 6.359 1.505 11.787c-.001 1.574.425 3.119 1.233 4.525L1.724 21.03l4.923-1.876zM17.476 14.39c-.329-.165-1.948-.96-2.248-1.069-.3-.11-.518-.165-.736.165-.219.33-.847 1.069-1.039 1.288-.192.219-.384.247-.713.083-1.156-.579-2.013-1.016-2.815-2.393-.21-.362.21-.336.604-1.13.064-.132.033-.247-.016-.347-.05-.1-.412-1.002-.566-1.369-.15-.36-.316-.31-.433-.316-.112-.005-.241-.006-.37-.006-.13 0-.34.048-.518.247-.18.197-.684.669-.684 1.63 0 .961.7 1.887.798 2.018.099.13 1.381 2.108 3.343 2.957.467.203.83.324 1.114.414.47.149.897.128 1.235.077.377-.057 1.948-.795 2.222-1.564.274-.768.274-1.427.192-1.563-.081-.137-.296-.219-.625-.384z"/></svg>
+                WhatsApp Hızlı Teklif
+            </a>
+        </div>
+    </section>
+
+    <!-- Brand Logos Section (Orijinal Logolar Entegre Edildi) -->
+    <section id="markalar" class="section">
+        <div class="section-title">
+            <h2>Dağıtımını Yaptığımız Markalar</h2>
+            <p>Treyler ve ağır vasıta fren, süspansiyon ve pnömatik sistemlerinde dünyanın güvenini kazanmış orijinal marka ve üreticilerin yedek parçalarını sağlıyoruz.</p>
+        </div>
+
+        <div class="brands-container">
+            <!-- ASPÖCK -->
+            <div class="brand-card">
+                <div class="brand-logo-img">
+                    <img src="asp.png" alt="ASPÖCK Systems">
+                </div>
+                <h3>Aydınlatma Sistemleri</h3>
+            </div>
+
+            <!-- KNORR-BREMSE -->
+            <div class="brand-card">
+                <div class="brand-logo-img">
+                    <img src="knor.png" alt="KNORR-BREMSE">
+                </div>
+                <h3>Fren ve Pnömatik</h3>
+            </div>
+
+            <!-- WABCO -->
+            <div class="brand-card">
+                <div class="brand-logo-img">
+                    <img src="images.png" alt="WABCO">
+                </div>
+                <h3>EBS & Kontrol Sistemleri</h3>
+            </div>
+
+            <!-- SAF HOLLAND -->
+            <div class="brand-card">
+                <div class="brand-logo-img">
+                    <img src="saf.png" alt="SAF Holland">
+                </div>
+                <h3>Dingil & Süspansiyon</h3>
+            </div>
+
+            <!-- BPW -->
+            <div class="brand-card">
+                <div class="brand-logo-img">
+                    <img src="download.png" alt="BPW Axles">
+                </div>
+                <h3>Aks & Yedek Parça</h3>
+            </div>
+
+            <!-- HALDEX -->
+            <div class="brand-card">
+                <div class="brand-logo-img">
+                    <img src="haldex.png" alt="Haldex">
+                </div>
+                <h3>Fren Kontrol Sistemleri</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kurumsal Bilgi Alanı -->
+    <section id="hakkimizda" class="section section-bg">
+        <div class="section-title">
+            <h2>Neden E34 Trailer & Truck Spare Parts?</h2>
+            <p>Sektördeki tecrübemiz ve profesyonel iş anlayışımızla iş ortaklarımıza kesintisiz lojistik gücü sağlıyoruz.</p>
+        </div>
+
+        <div class="info-table">
+            <div class="info-cell" style="width: 45%; padding-right: 30px;">
+                <h3 style="color: #ffffff; font-size: 26px; margin: 0 0 20px 0;">Yedek Parçada Kesintisiz Güven ve Hızlı Teslimat</h3>
+                <p style="color: #a0a5b0; margin-bottom: 0;">Lojistikte zamanın ve güvenliğin ne kadar kritik olduğunu çok iyi biliyoruz. E34 Trailer & Truck Spare Parts olarak, ağır vasıta araçlarınızın yola emniyetle devam edebilmesi için sadece yüksek kaliteli, test edilmiş ve sertifikalı ürünlerin satışını gerçekleştiriyoruz. Geniş ürün yelpazemizle taleplerinize hızla çözüm sunuyoruz.</p>
+            </div>
+            <div class="info-cell" style="width: 55%;">
+                <div class="info-panel">
+                    <h4>Ayrıcalıklarımız</h4>
+                    <ul class="info-list">
+                        <li><strong>Orijinal ve Muadil Kalitesi:</strong> Sektörün öncü üreticileri tarafından onaylanmış uzun ömürlü parçalar.</li>
+                        <li><strong>Uzman Teknik Destek:</strong> Aracınızın marka ve modeline en uygun doğru parça tespiti.</li>
+                        <li><strong>Hızlı Tedarik Süreci:</strong> Siparişlerinizin en kısa sürede hazırlanıp operasyonunuza teslim edilmesi.</li>
+                        <li><strong>Rekabetçi Fiyat Politikası:</strong> Kaliteden ödün vermeden en optimum maliyet avantajları.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim & Güncellenmiş Bilgiler -->
+    <section id="iletisim" class="section">
+        <div class="section-title">
+            <h2>İletişim & Sipariş Hattı</h2>
+            <p>Fiyat teklifi almak, stok sormak veya teknik detayları görüşmek için bizimle hemen iletişime geçebilirsiniz.</p>
+        </div>
+
+        <div class="contact-table">
+            <!-- Sol Sütun: Güncel İletişim Kartları -->
+            <div class="contact-info-cell">
+                <div class="contact-item">
+                    <h5>Şirket Adresi</h5>
+                    <p><strong>E34 Trailer & Truck Spare Parts</strong><br>
+                    Orhanlı Mah. Hatip Sk. C Blok No: 4/23<br>Tuzla / İstanbul / Türkiye</p>
+                </div>
+                <div class="contact-item">
+                    <h5>Satış & İletişim Sorumluları</h5>
+                    <p style="margin-bottom: 12px;"><strong>Emrah Ulukuz</strong><br>
+                    <a href="tel:+905327373415" class="phone-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> 
+                        0532 737 34 15
+                    </a>
+                    <br>
+                    <a href="https://wa.me/905327373415" target="_blank" style="color: #25D366; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; margin-top: 5px;">
+                         WhatsApp ile Yaz
+                    </a>
+                    </p>
+                    
+                    <p><strong>Kemal Can Kök</strong><br>
+                    <a href="tel:+905461906367" class="phone-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        0546 190 63 67
+                    </a>
+                    <br>
+                    <a href="https://wa.me/905461906367" target="_blank" style="color: #25D366; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; margin-top: 5px;">
+                         WhatsApp ile Yaz
+                    </a>
+                    </p>
+                </div>
+                <div class="contact-item">
+                    <h5>E-Posta Adresleri</h5>
+                    <p style="margin-bottom: 5px;"><a href="mailto:emrah.ulukuz@e34parts.com">emrah.ulukuz@e34parts.com</a></p>
+                    <p><a href="mailto:kemalcan.kok@e34parts.com">kemalcan.kok@e34parts.com</a></p>
+                    <span>7/24 Yazılı Talepleriniz İçin</span>
+                </div>
+            </div>
+
+            <!-- Sağ Sütun: Teklif İsteme Formu -->
+            <div class="contact-form-cell">
+                <h4 style="margin: 0 0 20px 0; color: #ffffff; font-size: 18px; text-transform: uppercase;">Hızlı Teklif Formu</h4>
+                <form action="https://formsubmit.co/emrah.ulukuz@e34parts.com" method="POST">
+                    <input type="hidden" name="_subject" value="E34parts.com üzerinden yeni yedek parça teklif talebi!">
+                    <input type="hidden" name="_replyto" value="emrah.ulukuz@e34parts.com">
+                    <input type="hidden" name="_cc" value="kemalcan.kok@e34parts.com">
+                    
+                    <div class="form-group">
+                        <label for="name">Adınız / Firma Adınız</label>
+                        <input type="text" id="name" name="Firma/Müşteri Adı" class="form-control" placeholder="Örn: Ahmet Yılmaz / Lojistik A.Ş." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon Numaranız</label>
+                        <input type="tel" id="phone" name="Telefon" class="form-control" placeholder="Örn: 0532 XXX XX XX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Aradığınız Parça Detayı veya Mesajınız</label>
+                        <textarea id="message" name="Mesaj Detayı" class="form-control" rows="4" placeholder="Lütfen parça adı, OEM kodu veya araç marka/model bilgisini yazınız..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Bilgileri Gönder</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Truck & Trailer Silhouette Showcase -->
+    <section class="truck-showcase-section">
+        <div class="truck-container">
+            <!-- Truck & Trailer SVG Graphic -->
+            <svg class="truck-silhouette" viewBox="0 0 1200 350" xmlns="http://www.w3.org/2000/svg">
+                <!-- Ground Line -->
+                <line x1="0" y1="300" x2="1200" y2="300" stroke="#ff5500" stroke-width="4" />
+                <!-- Trailer Body -->
+                <rect x="50" y="50" width="800" height="200" rx="10" />
+                <rect x="40" y="240" width="820" height="20" />
+                <!-- Trailer Wheels -->
+                <circle cx="250" cy="280" r="20" />
+                <circle cx="250" cy="280" r="10" fill="#11141a" />
+                <circle cx="320" cy="280" r="20" />
+                <circle cx="320" cy="280" r="10" fill="#11141a" />
+                <circle cx="390" cy="280" r="20" />
+                <circle cx="390" cy="280" r="10" fill="#11141a" />
+                <!-- Connection & Support Legs -->
+                <rect x="840" y="220" width="40" height="15" />
+                <rect x="700" y="250" width="15" height="40" />
+                <!-- Truck Cabin (Tır Çekici) -->
+                <path d="M 870 250 L 870 120 L 960 120 L 1020 180 L 1120 180 L 1140 220 L 1140 270 L 870 270 Z" />
+                <!-- Truck Cabin Windows & Details -->
+                <path d="M 970 135 L 1015 170 L 1070 170 L 1070 135 Z" fill="#11141a" />
+                <rect x="890" y="135" width="65" height="45" fill="#11141a" />
+                <!-- Truck Wheels -->
+                <circle cx="920" cy="280" r="22" />
+                <circle cx="920" cy="280" r="11" fill="#11141a" />
+                <circle cx="1060" cy="280" r="22" />
+                <circle cx="1060" cy="280" r="11" fill="#11141a" />
+            </svg>
+            
+            <!-- Overlay E34 Kurumsal Logo Entegrasyonu -->
+            <div class="overlay-brand">
+                <img src="c52ac79b-1cbc-4818-99c1-2730d061ec3a.jpg" alt="E34 Parts Logo" class="overlay-logo-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 E34 Trailer & Truck Spare Parts. Tüm Hakları Saklıdır. | Orhanlı Mah. Tuzla, İstanbul</p>
+    </footer>
+
+</body>
+</html>
